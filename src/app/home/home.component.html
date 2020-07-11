@@ -1,0 +1,3 @@
+<p class="title">Welcome!</p>
+<p *ngIf="isLoggedIn"class="subtitle">You're logged in. You can <a [routerLink]="['/users/me']">view your profile</a>.</p>
+<p *ngIf="!isLoggedIn" class="subtitle">Please <a [routerLink]="['/login']">log in</a> to continue.</p>

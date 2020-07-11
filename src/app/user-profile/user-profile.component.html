@@ -1,0 +1,20 @@
+<h1 class="subtitle">Your Profile</h1>
+
+<div class="columns">
+    <div class="column">
+
+        <span class="mr-2">First Name: {{ user.first_name }}</span>
+
+        <span class="mr-2">Last Name: {{ user.last_name }}</span>
+    </div>
+
+    <!-- <div class="column">
+        <p>First Name: {{ user.first_name }}</p>
+
+        <p>Last Name: {{ user.last_name }}</p>
+    </div> -->
+</div>
+
+<a class="tag is-info mr-2" [routerLink]="['/users/edit']">Edit</a>
+<a class="tag is-info mr-2" [routerLink]="['/users/change-password']">Change Password</a>
+<a class="tag is-success mr-2" [routerLink]="['/users/create']">Add New</a>

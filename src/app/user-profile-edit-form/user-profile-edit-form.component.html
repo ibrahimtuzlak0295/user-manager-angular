@@ -1,0 +1,48 @@
+<form [formGroup]="userProfileEditorForm" (ngSubmit)="onSubmit()">
+
+    <div class="field">
+        <label class="label is-small">Username</label>
+        <div class="control">
+            <input class="input is-small" type="text" formControlName="username">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label is-small">First Name</label>
+        <div class="control">
+            <input class="input is-small" type="text" formControlName="first_name">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label is-small">Last Name</label>
+        <div class="control">
+            <input class="input is-small" type="text" formControlName="last_name">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label is-small">Address</label>
+        <div class="control">
+            <input class="input is-small" type="text" formControlName="address">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label is-small">ZIP</label>
+        <div class="control">
+            <input class="input is-small" type="number" formControlName="zip">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label is-small">City</label>
+        <div class="control">
+            <input class="input is-small" type="text" formControlName="city">
+        </div>
+    </div>
+
+    <div class="field">
+        <button class="input button is-small is-primary" type="submit" [disabled]="!userProfileEditorForm.valid">Submit</button>
+    </div>
+</form>
