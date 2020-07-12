@@ -3,7 +3,8 @@
     <div class="field">
         <label class="label is-small">Username</label>
         <div class="control">
-            <input class="input is-small" type="text" formControlName="username">
+            <input class="input is-small" [ngClass]="!username.valid && username.dirty ? 'is-danger' : ''" type="text" formControlName="username">
+            <p *ngIf="username.errors?.required && username.dirty" class="help is-danger">Username is required</p>
         </div>
     </div>
 
@@ -45,11 +46,17 @@
     <div class="field is-grouped">
         <div class="control is-expanded">
             <label class="label is-small">Password</label>
-            <input class="input is-small" type="password" formControlName="password">
+            <input class="input is-small" [ngClass]="!password.valid && password.dirty ? 'is-danger' : ''" type="password" formControlName="password">
+            <p *ngIf="password.errors?.required && password.dirty" class="help is-danger">Password is required</p>
+            <p *ngIf="password.errors?.minlength && password.dirty" class="help is-danger">Min length is 3</p>
         </div>
         <div class="control is-expanded">
             <label class="label is-small">Confirm Password</label>
-            <input class="input is-small" type="password" formControlName="password_confirmation">
+            <input class="input is-small" [ngClass]="!password_confirmation.valid && password_confirmation.dirty ? 'is-danger' : ''" type="password" formControlName="password_confirmation">
+            <p *ngIf="password_confirmation.errors?.required && password_confirmation.dirty" class="help is-danger">Password confirmation is required</p>
+            <p *ngIf="password_confirmation.errors?.minlength && password_confirmation.dirty" class="help is-danger">Min length is 3</p>
+            <p *ngIf="password_confirmation.errors?.confirmedValidator && password_confirmation.dirty" class="help is-danger">Passwords do not match</p>
+
         </div>
     </div>
 
